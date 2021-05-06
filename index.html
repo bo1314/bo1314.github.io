@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .lis{
+            width: 100px;
+            border: 1px solid black;
+            
+           
+        }
+        .lis span{
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            display:inline-block;
+            
+            text-align: center;
+            
+        }
+        .lis div{
+            height: 100px;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul class="uls">
+        <li class="lis">
+            <span>标题1</span>
+            <div style="display: block;">我是1</div>
+        </li>
+        <li class="lis">
+            <span>标题2</span>
+            <div>我是2</div>
+        </li>
+        <li class="lis">
+            <span>标题3</span>
+            <div>我是3</div>
+        </li>
+        <li class="lis">
+            <span>标题4</span>
+            <div>我是4</div>
+        </li>
+    </ul>
+</body>
+</html>
+<script src="./jquery-3.6.0.js"></script>
+<script>
+    $(function(){
+        $('.uls > .lis').click(function(){
+          $(this).children('div').show().parent().siblings('li').children('div').hide();
+
+          //this 当前 li  它的孩子 div show显示  .父亲 .除了自己本身的 li .孩子(div) hide 不显示 
+        })
+    })
+</script>
